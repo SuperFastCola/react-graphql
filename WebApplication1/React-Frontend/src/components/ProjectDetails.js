@@ -1,30 +1,40 @@
 import React, {Fragment } from 'react';
 import UpdateProject from './UpdateProjectButton';
-import { EDIT_PROJECT } from "../redux/actionTypes";
-import { selectProject } from "../redux/actions";
+import EditProject from './EditProjectButton';
+import {ProjectDetailsDisplay,ProjectDetailsEdit} from "./ProjectDetailsDisplay";
 import {connect} from 'react-redux';
+import {mapStore} from "../redux/mapStore";
 
 class ProjectDetails extends React.Component {
     constructor(props){
         super(props);
-        this.state = {edit:false};
-        this.editProject = this.editProject.bind(this);
+        this.displayButton = this.displayButton.bind(this);
+        this.displayInfoType = this.displayInfoType.bind(this);
+        this.state = {editing:false};
     }
 
-    editProject(){
-        this.setState({edit:true});
-        this.props.selectProject(this.props.details);
+    displayButton(){
+        if(this.props.store.selectedProject!=null && this.props.store.selectedProject.id === this.props.details.id){
+            return  <UpdateProject details={this.props.details}/>
+        }
+        return <EditProject details={this.props.details}/>
     }
 
-    render() {
+    displayInfoType(){
+        if(this.props.store.selectedProject!=null && this.props.store.selectedProject.id === this.props.details.id){
+            return <ProjectDetailsEdit details={this.props.details}/>
+        }
+        else{
+            return <ProjectDetailsDisplay details={this.props.details}/>
+        }
+        
+    }
+    render() {  
         return (
             <div className="col-12 col-md-6 my-3 my-md-4">
-            <h2 className="text-capitalize">{this.props.details.name}</h2>
-            <h5>{this.props.details.role}</h5>
-            <p>{this.props.details.description}</p>
-                <div>
-                <button className="btn btn-primary me-0 me-md-1" onClick={()=> this.editProject() }>Edit</button>
-                <UpdateProject/>
+                {this.displayInfoType()}   
+                <div>               
+                    {this.displayButton()}               
                 </div>
             </div>
 
@@ -32,8 +42,4 @@ class ProjectDetails extends React.Component {
     }
 }
 
-const mapStateToProps = function(store){
-	return {"store":store};		
-}
-
-export default connect(mapStateToProps,{selectProject})(ProjectDetails)
+export default connect(mapStore,null)(ProjectDetails)

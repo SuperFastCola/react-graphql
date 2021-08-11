@@ -3,7 +3,8 @@ import { EDIT_PROJECT } from "../actionTypes";
 //when the store is created createStore(rootReducer)
 //this initialstate is exported when the reducers are combined in the reducers/index.js combineReducers({projectsReducer});
 const initialState = {
-  selectedProject: null
+  selectedProject: null,
+  projectEdit: null
 };
 
 export default function(state = initialState, action) {

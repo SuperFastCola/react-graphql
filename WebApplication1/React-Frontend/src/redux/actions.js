@@ -5,6 +5,7 @@ import { EDIT_PROJECT } from "./actionTypes";
 export const selectProject = payload => {
     //payload is the data passed as a parameter
     //type is used in swicth block of the reducer
+    console.log(payload);
     return {
       type: EDIT_PROJECT,
       "project":payload
