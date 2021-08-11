@@ -26,7 +26,7 @@ async function startApolloServer() {
 	    }
 	    type Url {
 			link: String,
-			Text: String,
+			text: String,
 			
 	    }
 	    input UpdateProject{
@@ -50,6 +50,9 @@ async function startApolloServer() {
 
 	const resolvers = {
 	 	Query: {
+	 		project: async (_, { id }, { dataSources }) => {
+	      		return dataSources.projectsAPI.getProject(id);
+	    	},
 	    	projects: async (_, { id }, { dataSources }) => {
 	      		return dataSources.projectsAPI.getAllProjects();
 	    	}

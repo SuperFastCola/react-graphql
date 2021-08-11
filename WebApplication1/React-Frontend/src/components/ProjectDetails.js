@@ -1,18 +1,18 @@
 import React, {Fragment } from 'react';
 import UpdateCourse from './UpdateCourse';
 
-class CourseProfile extends React.Component {
+class ProjectDetails extends React.Component {
     constructor(props){
         super(props);
-        console.log(this.props);
+        console.log(this.props.details);
 
     }
     render() {
       return (
             <Fragment>
                 <div>
-                <h1>{this.props.details.title}</h1>
-                <h6>{this.props.details.author}</h6>
+                <h1>{this.props.details.name}</h1>
+                <h6>{this.props.details.role}</h6>
                 <div>{this.props.details.description}</div>
                 </div>
 
@@ -22,4 +22,4 @@ class CourseProfile extends React.Component {
     }
 }
 
-export default CourseProfile;
+export default ProjectDetails;

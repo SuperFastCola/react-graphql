@@ -4,7 +4,9 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text.Encodings.Web;
 using System.Text.Json;
+using System.Text.Unicode;
 using WebApplication1.Models;
 
 namespace WebApplication1.Features.Projects
@@ -12,9 +14,20 @@ namespace WebApplication1.Features.Projects
     public class Projects
     {
 
+        private TextEncoderSettings EncoderSettings;
+        private JsonSerializerOptions JSONOptions;
+
         public Projects()
         {
+            EncoderSettings = new TextEncoderSettings();
+            EncoderSettings.AllowRange(UnicodeRanges.BasicLatin);
 
+            JSONOptions = new JsonSerializerOptions
+            {
+                Encoder = JavaScriptEncoder.Create(EncoderSettings),
+                PropertyNameCaseInsensitive = true,
+                WriteIndented = true
+            };
         }
 
         public AllProjectsModel GetAll()
@@ -31,11 +44,7 @@ namespace WebApplication1.Features.Projects
         public AllProjectsModel GetData(string inputFileName)
         {
             string jsonString = loadDataFromFile(inputFileName ?? "projects.json");
-            var options = new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true
-            };
-            return JsonSerializer.Deserialize<AllProjectsModel>(jsonString, options);
+            return JsonSerializer.Deserialize<AllProjectsModel>(jsonString, JSONOptions);
         }
 
         private string loadDataFromFile(String rootFileName)
@@ -92,12 +101,7 @@ namespace WebApplication1.Features.Projects
 
             all.Projects[project.Id] = project;
 
-            var options = new JsonSerializerOptions
-            {
-                WriteIndented = true
-            };
-
-            writeDatatoFile(JsonSerializer.Serialize(all, options));
+            writeDatatoFile(JsonSerializer.Serialize(all, JSONOptions));
 
             return project;
         }

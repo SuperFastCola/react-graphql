@@ -11,6 +11,7 @@ module.exports = class ProjectsAPI extends RESTDataSource {
 
   async getProject(id) {
     // Send a GET request to the specified endpoint
+    console.log(id);
     return this.get(`values/${id}`);
   }
 
