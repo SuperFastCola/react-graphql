@@ -31,7 +31,7 @@ function returnProjects(data){
 
     if(data!=null){
         for(var i =0; i< data.projects.length; i++){
-            allprojects.push(<ProjectDetails key={data.projects[i].id} details={data.projects[i]}/>);
+            allprojects.push(<ProjectDetails key={i} details={data.projects[i]}/>);
         }
     }
     return allprojects;
@@ -44,9 +44,9 @@ const Project = () => (
     {       
         (projects) => {
             return (
-                <Fragment>
+                <div className="row">
                 { returnProjects(projects.data)}
-                </Fragment>
+                </div>
             )
         }
    }

@@ -1,25 +1,39 @@
 import React, {Fragment } from 'react';
-import UpdateCourse from './UpdateCourse';
+import UpdateProject from './UpdateProjectButton';
+import { EDIT_PROJECT } from "../redux/actionTypes";
+import { selectProject } from "../redux/actions";
+import {connect} from 'react-redux';
 
 class ProjectDetails extends React.Component {
     constructor(props){
         super(props);
-        console.log(this.props.details);
-
+        this.state = {edit:false};
+        this.editProject = this.editProject.bind(this);
     }
-    render() {
-      return (
-            <Fragment>
-                <div>
-                <h1>{this.props.details.name}</h1>
-                <h6>{this.props.details.role}</h6>
-                <div>{this.props.details.description}</div>
-                </div>
 
-                <UpdateCourse details={this.props.details} />
-            </Fragment>
-        )
+    editProject(){
+        this.setState({edit:true});
+        this.props.selectProject(this.props.details);
+    }
+
+    render() {
+        return (
+            <div className="col-12 col-md-6 my-3 my-md-4">
+            <h2 className="text-capitalize">{this.props.details.name}</h2>
+            <h5>{this.props.details.role}</h5>
+            <p>{this.props.details.description}</p>
+                <div>
+                <button className="btn btn-primary me-0 me-md-1" onClick={()=> this.editProject() }>Edit</button>
+                <UpdateProject/>
+                </div>
+            </div>
+
+            )
     }
 }
 
-export default ProjectDetails;
+const mapStateToProps = function(store){
+	return {"store":store};		
+}
+
+export default connect(mapStateToProps,{selectProject})(ProjectDetails)

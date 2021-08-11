@@ -18,22 +18,21 @@ const MUTATION_QUERY = gql`
     }
 `;
 
-const Submit = (props)=>{
+const UpdateProject = (props)=>{
     const [updateCourseTopicOnSubmit, { data, loading, error }] = useMutation(MUTATION_QUERY);
     if (loading) return <p>Loading</p>;
     if (error) return <p>An error occurred</p>;
-
     if (data){
         console.log(data);
     }
     
 
     return (
-        <button onClick={(e)=>{
+        <button className="btn btn-primary" onClick={(e)=>{
             e.preventDefault();
             updateCourseTopicOnSubmit({variables: { id: props.id, topic: String(props.topic) }});
-        }}>Submit</button>
+        }}>Update</button>
     )
 }
 
-export default Submit;
+export default UpdateProject;
