@@ -45,6 +45,7 @@ class ProjectDetailsEditComponent extends React.Component {
         var formLines = [];
         var i =0;
         for (const property in this.state) {
+            console.log(property);
             if(!property.match(/(^id$)|projid|url|_/)){
                 formLines.push(
                     <div key={++i}>
@@ -57,10 +58,26 @@ class ProjectDetailsEditComponent extends React.Component {
                                 <input className="form-control" type="text" name={property} defaultValue={this.state[property]} onChange={this.changeProperty}/>
                             )
                         }
-                        
-                        
                     </div>
                 );
+            }
+            else if(property==="url"){
+                    var count = 0;
+                    const urls = this.state[property].map( u =>{
+                        {count++}
+                        return(
+                            <div key={++i}>
+                                <label className="form-label text-capitalize">Url {count}</label>
+                                <input className="form-control" type="text" name="link" defaultValue={u.link} />
+                                <label className="form-label text-capitalize">Link Text {count}</label>
+                                <input className="form-control" type="text" name="text" defaultValue={u.text} />
+                         
+                            </div>
+                            
+                        )
+                    });
+                    console.log(urls);
+                    formLines.push(urls);
             }
         }
 
