@@ -29,7 +29,7 @@
     {
       "Id": 2,
       "Name": "Sanders",
-      "Description": "Comic Book Artwork (Ongoing)",
+      "Description": "Comic Book Artwork",
       "Role": "Illustration",
       "Tech": null,
       "Image": "mister_sanders.jpg",
@@ -41,7 +41,7 @@
     },
     {
       "Id": 3,
-      "Name": "Boutique R\uFFFDunion",
+      "Name": "Boutique R\u00E9union",
       "Description": "Online Presence",
       "Role": "Web Design, Development and Deployment",
       "Tech": "\u003Cul\u003E\u003Cli\u003EAmazon Web Services\u003C/li\u003E\u003Cli\u003EHTML 5\u003C/li\u003E\u003Cli\u003EAngular 1.5\u003C/li\u003E\u003Cli\u003EResponsive CSS\u003C/li\u003E\u003C/ul\u003E",

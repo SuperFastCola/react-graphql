@@ -43,8 +43,7 @@ async function startApolloServer() {
 
 	    input UpdateUrl {
 			link: String,
-			Text: String,
-			
+			text: String
 	    }
 	`;
 
@@ -53,7 +52,7 @@ async function startApolloServer() {
 	 		project: async (_, { id }, { dataSources }) => {
 	      		return dataSources.projectsAPI.getProject(id);
 	    	},
-	    	projects: async (_, { id }, { dataSources }) => {
+	    	projects: async (_, {}, { dataSources }) => {
 	      		return dataSources.projectsAPI.getAllProjects();
 	    	}
 	    },

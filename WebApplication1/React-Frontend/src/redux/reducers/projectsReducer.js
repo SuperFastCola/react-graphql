@@ -7,7 +7,7 @@ const initialState = {
   projectEdit: null
 };
 
-export default function(state = initialState, action) {
+const projectsReducer = function(state = initialState, action) {
   //switches by the constant 
   switch (action.type) {
     case EDIT_PROJECT: {
@@ -19,3 +19,6 @@ export default function(state = initialState, action) {
       return state;
   }
 }
+
+export default projectsReducer;
+ 

@@ -1,4 +1,3 @@
-import { selectProject } from "./actions";
 
 //passed to redux connect function, the store is passed in as a parameter
 //objects passed in is the reducer

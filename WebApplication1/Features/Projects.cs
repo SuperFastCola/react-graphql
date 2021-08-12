@@ -98,12 +98,15 @@ namespace WebApplication1.Features.Projects
                 }
             }
 
+            int index = all.Projects.FindIndex(p => p.Id == project.Id);
+            if (index >= 0)
+            {
+                all.Projects[index] = project;
+                writeDatatoFile(JsonSerializer.Serialize(all, JSONOptions));
+                return project;
+            }
 
-            all.Projects[project.Id] = project;
-
-            writeDatatoFile(JsonSerializer.Serialize(all, JSONOptions));
-
-            return project;
+            return null;
         }
 
 
