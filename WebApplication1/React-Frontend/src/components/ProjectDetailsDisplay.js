@@ -40,7 +40,7 @@ class ProjectDetailsEditComponent extends React.Component {
         this.setState(tmp);
     }
 
-    afterUpdateHandler(dataAfterUpdate){
+    afterUpdateHandler(){
         this.props.selectProject(null);
     }
 
@@ -69,6 +69,7 @@ class ProjectDetailsEditComponent extends React.Component {
             </form>
             <div>
                 <UpdateProject details={this.state} afterUpdate={this.afterUpdateHandler}/>
+                <button className="btn btn-warning ms-0 ms-md-1" onClick={this.afterUpdateHandler}>Cancel</button>
             </div>       
             </Fragment>
         )

@@ -2,7 +2,7 @@
   "Projects": [
     {
       "Id": 1,
-      "Name": "React/Redux with Spotify",
+      "Name": "React/Redux and Spotify",
       "Description": "Framework Exploration with Spotify API",
       "Role": "Web Design, Development and Deployment",
       "Tech": "\u003Cul\u003E\u003Cli\u003EAmazon Web Services\u003C/li\u003E\u003Cli\u003EReact JS\u003C/li\u003E\u003Cli\u003ERedux\u003C/li\u003E\u003Cli\u003EWebpack\u003C/li\u003E\u003Cli\u003EHTML 5\u003C/li\u003E\u003Cli\u003EResponsive CSS\u003C/li\u003E\u003C/ul\u003E",
@@ -154,7 +154,7 @@
     },
     {
       "Id": 9,
-      "Name": "CNN en Espa\uFFFDol",
+      "Name": "CNN en Espa\u00F1ol",
       "Description": "Multilingual B2C Sweepstakes Entry Minisite",
       "Role": "Development and Deployment",
       "Tech": "\u003Cul\u003E\u003Cli\u003EAmazon Web Services\u003C/li\u003E\u003Cli\u003ENodeJS\u003C/li\u003E\u003Cli\u003EDynamoDB\u003C/li\u003E\u003Cli\u003EJavascript\u003C/li\u003E\u003Cli\u003EJquery\u003C/li\u003E\u003C/ul\u003E\u003Cul\u003E\u003Cli\u003EResponsive Web Development\u003C/li\u003E\u003Cli\u003ECSS3\u003C/li\u003E\u003Cli\u003EJSON\u003Cli\u003E\u003C/ul\u003E",
@@ -173,7 +173,7 @@
     },
     {
       "Id": 10,
-      "Name": "FYI Netwo\u00E9k 2024",
+      "Name": "FYI Network 2024",
       "Description": "This is a test description",
       "Role": "Development",
       "Tech": null,

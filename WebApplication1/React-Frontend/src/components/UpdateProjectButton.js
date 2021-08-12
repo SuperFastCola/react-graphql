@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import { useMutation } from "react-apollo";
 import gql from "graphql-tag";
 
@@ -31,10 +31,10 @@ const UpdateProject = (props)=>{
     // dispatch(selectProject(null));       
     
     const [updateProjectOnSubmit, { data, loading, error }] = useMutation(MUTATION_QUERY);
-    // if (loading) return <p>Loading</p>;
-    // if (error) return <p>An error occurred</p>;
+    if (loading) return <p>Loading</p>;
+    if (error) return <p>An error occurred</p>;
     if (data){
-        props.afterUpdate(data);
+        props.afterUpdate();
     }
 
     function sendDataOnCLick(e){
