@@ -6,9 +6,6 @@ import {mapStore} from "../redux/mapStore";
 import {selectProject} from "../redux/actions";
 
 class ProjectDetailsDisplay extends React.Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
         return (
             <Fragment>
@@ -52,7 +49,16 @@ class ProjectDetailsEditComponent extends React.Component {
                 formLines.push(
                     <div key={++i}>
                         <label className="form-label text-capitalize">{property}</label>
-                        <input className="form-control" type="text" name={property} defaultValue={this.state[property]} onChange={this.changeProperty}/>
+                        {
+                            (   
+                                property.match(/description|tech/)?
+                                <textarea className="form-control" name={property} defaultValue={this.state[property]} onChange={this.changeProperty}/>
+                                :
+                                <input className="form-control" type="text" name={property} defaultValue={this.state[property]} onChange={this.changeProperty}/>
+                            )
+                        }
+                        
+                        
                     </div>
                 );
             }

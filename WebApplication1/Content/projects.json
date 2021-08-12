@@ -116,8 +116,7 @@
       "Url": null,
       "Projid": "cruelty",
       "Type": [
-        "illustration",
-        "artwork"
+        "illustration,artwork,design"
       ]
     },
     {
@@ -130,7 +129,7 @@
       "Url": null,
       "Projid": "cruelty",
       "Type": [
-        "illustration"
+        "illustration,design"
       ]
     },
     {
