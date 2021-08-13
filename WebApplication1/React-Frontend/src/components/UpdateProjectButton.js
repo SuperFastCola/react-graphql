@@ -42,6 +42,7 @@ const UpdateProject = (props)=>{
         //https://stackoverflow.com/questions/47211778/cleaning-unwanted-fields-from-graphql-responses/51380645#51380645
         const omitTypename = (key, value) => (key === '__typename' ? undefined : value)
         const cleanedProject = JSON.parse(JSON.stringify(props.details), omitTypename);
+        console.log("Data Sent ",cleanedProject);
         updateProjectOnSubmit({variables: { projectId: cleanedProject.id, projectData: cleanedProject }});
         props.afterUpdate(e);
     }

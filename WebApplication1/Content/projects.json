@@ -2,7 +2,7 @@
   "Projects": [
     {
       "Id": 1,
-      "Name": "React/Redux and Spotify",
+      "Name": "React/Redux with Spotify",
       "Description": "Framework Exploration with Spotify API",
       "Role": "Web Design, Development and Deployment",
       "Tech": "\u003Cul\u003E\u003Cli\u003EAmazon Web Services\u003C/li\u003E\u003Cli\u003EReact JS\u003C/li\u003E\u003Cli\u003ERedux\u003C/li\u003E\u003Cli\u003EWebpack\u003C/li\u003E\u003Cli\u003EHTML 5\u003C/li\u003E\u003Cli\u003EResponsive CSS\u003C/li\u003E\u003C/ul\u003E",
@@ -10,7 +10,7 @@
       "Url": [
         {
           "Link": "http://reactredux.deluxeluxury.com/",
-          "Text": "View Live Site"
+          "Text": "View Live Sites"
         },
         {
           "Link": "https://github.com/SuperFastCola/tt-music-search/tree/master/app",
@@ -23,7 +23,8 @@
       ],
       "Projid": "reactredux",
       "Type": [
-        "design,front-end"
+        "design",
+        "front-end"
       ]
     },
     {
@@ -58,6 +59,10 @@
         {
           "Link": "https://github.com/SuperFastCola/boutiquereunion/blob/master/css/scss/reunion.styles.scss",
           "Text": "View Essential SASS"
+        },
+        {
+          "Link": "",
+          "Text": ""
         }
       ],
       "Projid": "reunion",
@@ -161,13 +166,13 @@
       "Url": [
         {
           "Link": "https://github.com/SuperFastCola/node-site/blob/master/app.js",
-          "Text": "View Essential Code"
+          "Text": "View Essential STuff"
         }
       ],
       "Projid": "cnnesweeps",
       "Type": [
         "front-end",
-        "back-end"
+        " back-end"
       ]
     },
     {
