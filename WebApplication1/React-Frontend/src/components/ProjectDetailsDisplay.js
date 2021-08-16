@@ -10,7 +10,7 @@ class ProjectDetailsDisplay extends React.Component {
         return (
             <Fragment>
                 <h2 className="text-capitalize">{this.props.details.name}</h2>
-                <h5>{this.props.details.role}</h5>
+                <h5 data-testid="project-role">{this.props.details.role}</h5>
                 <p>{this.props.details.description}</p>
                 <div>
                 <EditProject details={this.props.details}/>
