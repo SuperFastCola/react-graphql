@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+WebApplication1/App_Data/
 
 # misc
 .DS_Store
