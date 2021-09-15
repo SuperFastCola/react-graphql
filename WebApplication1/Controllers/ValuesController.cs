@@ -12,11 +12,13 @@ using WebApplication1.Features.Projects;
 using WebApplication1.Models;
 namespace WebApplication1.Controllers
 {
+    [Authorize]
     public class ValuesController : ApiController 
     {
         Projects projects = new Projects();
 
         // GET api/values
+        [Route("api/values")]
         public AllProjectsModel Get()
         {
             return projects.GetAll();
