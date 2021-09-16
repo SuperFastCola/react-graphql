@@ -1,32 +1,31 @@
-import React from 'react';
-import { Query } from "react-apollo";
-import { PROJECTS_QUERY } from "./GraphQLQueries";
+import React, { useState, useEffect } from 'react';
 import {ProjectsInterface} from "../types/projects";
 import ProjectDetails from './ProjectDetails';
+import {sendAjaxRequest} from "../utilities/sendAjaxRequest";
 
+export const Project = function(){
 
-function returnProjects(data:ProjectsInterface){
-    var allprojects = [];
-    if(data!=null){
-        for(var i =0; i< data.projects.length; i++){
-            allprojects.push(<ProjectDetails key={i} details={data.projects[i]}/>);
+    const [allProjects, setAllProjects] = useState([]);
+
+    function returnProjects(data:ProjectsInterface){
+        let projects:any = [];
+        if(data!=null){
+            for(var i =0; i< data.projects.length; i++){
+                projects.push(<ProjectDetails key={i} details={data.projects[i]}/>);
+            }
+            setAllProjects(projects);
         }
     }
-    return allprojects;
-}
 
-const Project = () => (
-    //<Query query={PROJECTS_QUERY} variables={{ courseID1:courseIDs[0], courseID2:courseIDs[1] }} >
-    <Query query={PROJECTS_QUERY} >
-    {       
-        (projects:any) => {
-            return (
-                <div className="row">
-                { returnProjects(projects.data)}
-                </div>
-            )
-        }
-   }
-  </Query>
-);
-export default Project;
+    useEffect(() => {
+        sendAjaxRequest("https://webapplication120210914120117.azurewebsites.net/api/values",returnProjects,null);
+    });
+
+    return (     
+        <div className="row">
+        {allProjects.map((item:any)=>{
+            return item;
+        })}
+        </div>     
+   );
+};

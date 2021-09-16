@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import EditProject from './EditProjectButton';
-import UpdateProject from './UpdateProjectButton';
+//import UpdateProject from './UpdateProjectButton';
 import {connect} from 'react-redux';
 import {mapStore} from "../redux/mapStore";
 import {selectProject} from "../redux/actions";
@@ -73,10 +73,10 @@ class ProjectDetailsEditComponent extends React.Component {
         e.preventDefault();
         
         var tmpUrl = this.state.url.filter( (item,index) => {
-            console.log(item,index,e.target.dataset["index"]);
-            if(index != e.target.dataset["index"]){
+            if(index !== e.target.dataset["index"]){
                 return item;
             }
+            return null;
         });
         this.setState({url:[...tmpUrl]});
     }
@@ -148,10 +148,10 @@ class ProjectDetailsEditComponent extends React.Component {
             <form className="mb-3 mb-md-4" ref={this.formRef}>
                 {this.createFormLines()}
             </form>
-            <div>
-                <UpdateProject details={this.state} afterUpdate={this.afterUpdateHandler}/>
+             <div>
+                {/* <UpdateProject details={this.state} afterUpdate={this.afterUpdateHandler}/> */}
                 <button className="btn btn-warning ms-0 ms-md-1" onClick={this.afterUpdateHandler}>Cancel</button>
-            </div>       
+            </div>
             </Fragment>
         )
     }
