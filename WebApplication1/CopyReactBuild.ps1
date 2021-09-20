@@ -1,0 +1,1 @@
+﻿Copy-Item -Path "$PSScriptRoot\React-Frontend\build\*" -Destination "$PSScriptRoot\Content\webapp" -Recurse -Force

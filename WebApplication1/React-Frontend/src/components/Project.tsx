@@ -1,31 +1,53 @@
-import React, { useState, useEffect } from 'react';
-import {ProjectsInterface} from "../types/projects";
+import {connect} from 'react-redux';
+import React from "react";
+import { mapStore } from "../redux/mapStore";
+import {ProjectDefinition, ProjectsInterface} from "../types/projects";
+import { sendAjaxRequest } from '../utilities/sendAjaxRequest';
 import ProjectDetails from './ProjectDetails';
-import {sendAjaxRequest} from "../utilities/sendAjaxRequest";
 
-export const Project = function(){
+type Props = {
+    accessToken:any;
+}
 
-    const [allProjects, setAllProjects] = useState([]);
+type State =  { 
+    allProjects: ProjectDefinition[]
+};
 
-    function returnProjects(data:ProjectsInterface){
+class ProjectBase extends React.Component<Props, State> {
+
+    constructor(props:Props){
+        super(props);
+        this.state = ({allProjects:[]});
+        this.returnProjects = this.returnProjects.bind(this);
+        //const [allProjects, setAllProjects] = useState([]);
+    }
+
+    returnProjects(data:ProjectsInterface){
         let projects:any = [];
         if(data!=null){
             for(var i =0; i< data.projects.length; i++){
                 projects.push(<ProjectDetails key={i} details={data.projects[i]}/>);
             }
-            setAllProjects(projects);
+            this.setState({allProjects:projects});
         }
     }
 
-    useEffect(() => {
-        sendAjaxRequest("https://webapplication120210914120117.azurewebsites.net/api/values",returnProjects,null);
-    });
+    componentDidUpdate(prevProps:Props, prevState:State, snapshot:any) {
+        if(this.state.allProjects.length===0 && prevProps.accessToken !==this.props.accessToken){
+                sendAjaxRequest("https://abtestcontroller.azurewebsites.net/api/values",this.returnProjects,this.props.accessToken);
+        }
+    }
 
-    return (     
+    render() {  
+        return (  
         <div className="row">
-        {allProjects.map((item:any)=>{
+            {(console.log("--111-",this.props))}
+        {this.state.allProjects.map((item:any)=>{
             return item;
         })}
-        </div>     
-   );
+        </div>
+        )     
+    }
 };
+
+export const Project = connect(mapStore,null)(ProjectBase);
