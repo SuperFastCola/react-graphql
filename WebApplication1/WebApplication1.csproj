@@ -211,6 +211,7 @@
     </Reference>
     <Reference Include="Microsoft.Identity.Client, Version=4.36.0.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Identity.Client.4.36.0\lib\net461\Microsoft.Identity.Client.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Identity.Client.Extensions.Msal, Version=2.16.5.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Identity.Client.Extensions.Msal.2.16.5\lib\net45\Microsoft.Identity.Client.Extensions.Msal.dll</HintPath>
