@@ -22,6 +22,7 @@ export const sendAjaxRequest = (url, callback, token) => {
         if(typeof token != undefined){
             const bearer = `Bearer ${token}`;
             headers.append("Authorization", bearer);
+            headers.append("Authorization", bearer);
         }
         
         var response = null;
@@ -30,7 +31,7 @@ export const sendAjaxRequest = (url, callback, token) => {
             method: 'GET', // *GET, POST, PUT, DELETE, etc.
             mode: 'cors', // no-cors, *cors, same-origin
             cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-            credentials: 'same-origin', // include, *same-origin, omit
+            //credentials: 'same-origin', // include, *same-origin, omit
             headers: headers,
             redirect: 'follow', // manual, *follow, error
             referrerPolicy: 'no-referrer', 

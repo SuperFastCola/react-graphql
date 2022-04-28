@@ -8,11 +8,12 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using WebApplication1.Features.Projects;
 using WebApplication1.Models;
 namespace WebApplication1.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class ValuesController : ApiController 
     {
         Projects projects = new Projects();

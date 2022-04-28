@@ -33,8 +33,11 @@ class ProjectBase extends React.Component<Props, State> {
     }
 
     componentDidUpdate(prevProps:Props, prevState:State, snapshot:any) {
+
         if(this.state.allProjects.length===0 && prevProps.accessToken !==this.props.accessToken){
-                sendAjaxRequest("https://abtestcontroller.azurewebsites.net/api/values",this.returnProjects,this.props.accessToken);
+                //sendAjaxRequest("https://abtestcontroller.azurewebsites.net/api/values",this.returnProjects,this.props.accessToken);
+                sendAjaxRequest("https://react.local/api/values",this.returnProjects,this.props.accessToken);
+               
         }
     }
 

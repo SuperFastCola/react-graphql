@@ -30,7 +30,7 @@ public class Startup
     public void Configuration(IAppBuilder app)
     {
         app.SetDefaultSignInAsAuthenticationType(CookieAuthenticationDefaults.AuthenticationType);
-
+        //app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
         app.UseCookieAuthentication(new CookieAuthenticationOptions());
         app.UseOpenIdConnectAuthentication(
             new OpenIdConnectAuthenticationOptions
