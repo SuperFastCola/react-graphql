@@ -1,7 +1,5 @@
 import React from "react";
 import { useIsAuthenticated } from "@azure/msal-react";
-import { SignInButton } from "../components/SignInButton";
-import { SignOutButton } from "../components/SignOutButton";
 import {ProfileContent} from "../components/ProfileContent";
 
 /**
@@ -12,9 +10,6 @@ export const PageLayout = (props:any) => {
 
     return (
         <>
-            { isAuthenticated ? <SignOutButton /> : <SignInButton /> }
-            <ProfileContent/>
-            <h5>Welcome to the Microsoft Authentication Library For React Tutorial</h5>
             {props.children}
         </>
     );

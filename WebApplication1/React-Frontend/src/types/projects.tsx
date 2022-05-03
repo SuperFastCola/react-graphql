@@ -5,7 +5,7 @@ export interface ProjectsInterface{
 
 export type ProjectDefinition ={
     url: string[]
-    id: number;
+    id?: number;
     name: string;
     description: string;
     role: string;

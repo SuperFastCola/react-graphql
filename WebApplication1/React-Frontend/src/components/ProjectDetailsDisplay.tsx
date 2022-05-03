@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import EditProject from './EditProjectButton';
-//import UpdateProject from './UpdateProjectButton';
+import UpdateProject from './UpdateProjectButton';
 import {connect} from 'react-redux';
 import {mapStore} from "../redux/mapStore";
 import {selectProject} from "../redux/actions";
@@ -174,7 +174,7 @@ class ProjectDetailsEditComponent extends React.Component<Props, State> {
                 {this.createFormLines()}
             </form>
              <div>
-                {/* <UpdateProject details={this.state} afterUpdate={this.afterUpdateHandler}/> */}
+                {<UpdateProject details={this.state} afterUpdate={this.afterUpdateHandler}/>}
                 <button className="btn btn-warning ms-0 ms-md-1" onClick={this.afterUpdateHandler}>Cancel</button>
             </div>
             </Fragment>

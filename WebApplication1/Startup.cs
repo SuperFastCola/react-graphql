@@ -29,6 +29,7 @@ public class Startup
     /// <param name="app"></param>
     public void Configuration(IAppBuilder app)
     {
+        /*
         app.SetDefaultSignInAsAuthenticationType(CookieAuthenticationDefaults.AuthenticationType);
         //app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
         app.UseCookieAuthentication(new CookieAuthenticationOptions());
@@ -58,6 +59,7 @@ public class Startup
                 }
             }
         );
+        */
     }
 
     /// <summary>

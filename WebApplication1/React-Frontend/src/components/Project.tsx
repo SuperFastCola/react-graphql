@@ -6,7 +6,6 @@ import { sendAjaxRequest } from '../utilities/sendAjaxRequest';
 import ProjectDetails from './ProjectDetails';
 
 type Props = {
-    accessToken:any;
 }
 
 type State =  { 
@@ -22,6 +21,12 @@ class ProjectBase extends React.Component<Props, State> {
         //const [allProjects, setAllProjects] = useState([]);
     }
 
+    componentDidMount() {
+        if(this.state.allProjects.length===0){
+            sendAjaxRequest("https://react.local/api/values","GET",this.returnProjects);
+        }
+    }
+
     returnProjects(data:ProjectsInterface){
         let projects:any = [];
         if(data!=null){
@@ -31,16 +36,6 @@ class ProjectBase extends React.Component<Props, State> {
             this.setState({allProjects:projects});
         }
     }
-
-    componentDidUpdate(prevProps:Props, prevState:State, snapshot:any) {
-
-        if(this.state.allProjects.length===0 && prevProps.accessToken !==this.props.accessToken){
-                //sendAjaxRequest("https://abtestcontroller.azurewebsites.net/api/values",this.returnProjects,this.props.accessToken);
-                sendAjaxRequest("https://react.local/api/values",this.returnProjects,this.props.accessToken);
-               
-        }
-    }
-
     render() {  
         return (  
         <div className="row">

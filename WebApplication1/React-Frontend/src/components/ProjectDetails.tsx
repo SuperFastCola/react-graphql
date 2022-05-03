@@ -2,12 +2,11 @@ import React from 'react';
 import {ProjectDetailsDisplay,ProjectDetailsEdit} from "./ProjectDetailsDisplay";
 import {connect} from 'react-redux';
 import {mapStore} from "../redux/mapStore";
+import {ProjectDefinition} from "../types/projects";
 
 interface Props{
     details:any;
-    store?:{
-        selectedProject: any,
-    }
+    selectedProject?: ProjectDefinition;
 }
 
 class ProjectDetails extends React.Component<Props> {
@@ -18,7 +17,7 @@ class ProjectDetails extends React.Component<Props> {
     }
 
     displayInfoType(){
-        if(this.props.store!== undefined && this.props.store.selectedProject!=null && this.props.store.selectedProject.id === this.props.details.id){
+        if(this.props.selectedProject!==undefined && this.props.selectedProject.id === this.props.details.id){
             return <ProjectDetailsEdit details={this.props.details}/>
         }
         else{
