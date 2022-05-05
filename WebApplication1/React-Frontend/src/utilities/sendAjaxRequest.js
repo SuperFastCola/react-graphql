@@ -1,8 +1,9 @@
-export const sendAjaxRequest = (url, method, callback, token) => {
+export const sendAjaxRequest = (url, method, putData, callback, token) => {
 	var ajaxobj = {
         request: null,
         getData: null,
         ajaxError: null,
+        callback: callback,
         headers: new Headers()
     };
 
@@ -18,10 +19,13 @@ export const sendAjaxRequest = (url, method, callback, token) => {
         mode: 'cors', // no-cors, *cors, same-origin
         cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
         //credentials: 'same-origin', // include, *same-origin, omit
+        body: putData,
         headers: ajaxobj.headers,
         redirect: 'follow', // manual, *follow, error
         referrerPolicy: 'no-referrer'
     };
+
+    console.log(ajaxobj.request);
 	
  	ajaxobj.ajaxError = function(jqXHR, textStatus){
  		console.log(jqXHR);
@@ -41,15 +45,23 @@ export const sendAjaxRequest = (url, method, callback, token) => {
         return (await response).json(); // parses JSON response into native JavaScript objects
     }
 
+    ajaxobj.processData = function(data){
+        console.log("---",this.callback,data)
+        this.callback.call(null,data);
+    }
+
     //bind with ajaxObj
     ajaxobj.ajaxError = ajaxobj.ajaxError.bind(ajaxobj);
     ajaxobj.getData = ajaxobj.getData.bind(ajaxobj);
+    ajaxobj.processData = ajaxobj.processData.bind(ajaxobj);
     
     switch(method){
+        case 'PUT':
+            ajaxobj.request.method = 'PUT';
+            ajaxobj.getData(url).then(ajaxobj.processData);
+        break;
         default:
-            ajaxobj.getData(url).then(data => {
-                callback.call(null,data); // JSON data parsed by `data.json()` call
-            });
+            ajaxobj.getData(url).then(ajaxobj.processData);
         break;
             
     }

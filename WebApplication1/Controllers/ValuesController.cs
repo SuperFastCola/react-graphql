@@ -32,6 +32,7 @@ namespace WebApplication1.Controllers
             return projects.GetProject(id);
         }
 
+        [HttpPut]
         public ProjectViewModel Put(int id, ProjectViewModel projectToUpdate)
         {
             return projects.UpdateProject(projectToUpdate);

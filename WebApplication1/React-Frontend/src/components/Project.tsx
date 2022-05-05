@@ -23,7 +23,7 @@ class ProjectBase extends React.Component<Props, State> {
 
     componentDidMount() {
         if(this.state.allProjects.length===0){
-            sendAjaxRequest("https://react.local/api/values","GET",this.returnProjects);
+            sendAjaxRequest("https://react.local/api/values","GET",undefined,this.returnProjects);
         }
     }
 

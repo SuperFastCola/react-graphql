@@ -74,7 +74,7 @@ class ProjectDetailsEditComponent extends React.Component<Props, State> {
 
     afterUpdateHandler(){
         if(this.props.selectProject){
-            this.props.selectProject(null);
+            this.props.selectProject(undefined);
         }
     }
 
