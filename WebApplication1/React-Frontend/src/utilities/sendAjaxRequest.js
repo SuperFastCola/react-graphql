@@ -24,8 +24,6 @@ export const sendAjaxRequest = (url, method, putData, callback, token) => {
         redirect: 'follow', // manual, *follow, error
         referrerPolicy: 'no-referrer'
     };
-
-    console.log(ajaxobj.request);
 	
  	ajaxobj.ajaxError = function(jqXHR, textStatus){
  		console.log(jqXHR);
@@ -46,8 +44,9 @@ export const sendAjaxRequest = (url, method, putData, callback, token) => {
     }
 
     ajaxobj.processData = function(data){
-        console.log("---",this.callback,data)
-        this.callback.call(null,data);
+        if(typeof this.callback != "undefined"){
+            this.callback.call(null,data);
+        }
     }
 
     //bind with ajaxObj

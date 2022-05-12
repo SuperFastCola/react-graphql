@@ -6,6 +6,7 @@ import {selectProject} from "../redux/actions";
 
 interface Props{
     details:any;
+    buttonName: string;
     selectProject?(payload:Props):any;
 }
 
@@ -15,7 +16,7 @@ class EditProject extends React.Component<Props> {
         this.chooseProject = this.chooseProject.bind(this);
     }
 
-    chooseProject(){
+    chooseProject(e:any){
         if(this.props.selectProject!==undefined){
             this.props.selectProject(this.props.details);
         }
@@ -23,7 +24,7 @@ class EditProject extends React.Component<Props> {
 
     render() {       
         return (
-            <button className="btn btn-primary me-0 me-md-1" onClick={this.chooseProject}>Edit</button>
+            <button className="btn btn-primary me-0 me-md-1" data-name={this.props.buttonName} onClick={this.chooseProject}>Edit</button>
         )
     }
 }

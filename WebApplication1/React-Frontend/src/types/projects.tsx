@@ -1,5 +1,6 @@
 
 export interface ProjectsInterface{
+    length: number;
     projects:Array<any>
 }
 

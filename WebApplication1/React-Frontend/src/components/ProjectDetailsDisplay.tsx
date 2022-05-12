@@ -3,12 +3,14 @@ import EditProject from './EditProjectButton';
 import UpdateProject from './UpdateProjectButton';
 import {connect} from 'react-redux';
 import {mapStore} from "../redux/mapStore";
-import {selectProject} from "../redux/actions";
+import {selectProject,updateProject} from "../redux/actions";
+import CancelEdit from './CancelEdit';
 
 
 type Props = {
     details:any;
     selectProject?(payload:any):any;
+    updateProject?(payload:any):any;
 }
 
 type ProjectDefinition ={
@@ -33,7 +35,7 @@ class ProjectDetailsDisplay extends React.Component<Props, State> {
                 <h5 data-testid="project-role">{this.props.details.role}</h5>
                 <p>{this.props.details.description}</p>
                 <div>
-                <EditProject details={this.props.details}/>
+                <EditProject details={this.props.details} buttonName="Edit"/>
                 </div>
             </Fragment>
         )
@@ -72,7 +74,20 @@ class ProjectDetailsEditComponent extends React.Component<Props, State> {
         this.setState({url:[...tmpUrl]});
     }
 
-    afterUpdateHandler(){
+    afterUpdateHandler(dataset:any,data:any){
+        
+        if(dataset["name"] !== undefined){
+            var buttonName = String(dataset["name"]).toLowerCase();
+            switch(buttonName){
+                case "update":
+                    if(this.props.updateProject!==undefined && data !== undefined){
+                        this.props.updateProject(data);
+                    }
+                break;
+            }
+
+        }
+
         if(this.props.selectProject){
             this.props.selectProject(undefined);
         }
@@ -174,13 +189,13 @@ class ProjectDetailsEditComponent extends React.Component<Props, State> {
                 {this.createFormLines()}
             </form>
              <div>
-                {<UpdateProject details={this.state} afterUpdate={this.afterUpdateHandler}/>}
-                <button className="btn btn-warning ms-0 ms-md-1" onClick={this.afterUpdateHandler}>Cancel</button>
+                {<UpdateProject details={this.state} buttonName="Update" afterUpdate={this.afterUpdateHandler}/>}
+                {<CancelEdit buttonName="Cancel" afterUpdate={this.afterUpdateHandler}/>}
             </div>
             </Fragment>
         )
     }
 }
 
-export const ProjectDetailsEdit = connect(mapStore,{selectProject})(ProjectDetailsEditComponent);
+export const ProjectDetailsEdit = connect(mapStore,{selectProject,updateProject})(ProjectDetailsEditComponent);
 

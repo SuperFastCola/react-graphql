@@ -1,11 +1,14 @@
 import {connect} from 'react-redux';
 import React from "react";
 import { mapStore } from "../redux/mapStore";
+import {storeProjects} from "../redux/actions";
 import {ProjectDefinition, ProjectsInterface} from "../types/projects";
 import { sendAjaxRequest } from '../utilities/sendAjaxRequest';
 import ProjectDetails from './ProjectDetails';
 
 type Props = {
+    projects:ProjectsInterface;
+    storeProjects?(payload:any):any;
 }
 
 type State =  { 
@@ -16,36 +19,38 @@ class ProjectBase extends React.Component<Props, State> {
 
     constructor(props:Props){
         super(props);
-        this.state = ({allProjects:[]});
         this.returnProjects = this.returnProjects.bind(this);
-        //const [allProjects, setAllProjects] = useState([]);
     }
 
     componentDidMount() {
-        if(this.state.allProjects.length===0){
-            sendAjaxRequest("https://react.local/api/values","GET",undefined,this.returnProjects);
+        if(this.props.projects === undefined){
+            sendAjaxRequest("https://localhost:44311//api/values","GET",undefined,this.returnProjects);
         }
     }
 
     returnProjects(data:ProjectsInterface){
-        let projects:any = [];
         if(data!=null){
-            for(var i =0; i< data.projects.length; i++){
-                projects.push(<ProjectDetails key={i} details={data.projects[i]}/>);
+            if( this.props.storeProjects!==undefined){
+                this.props.storeProjects(data.projects);
             }
-            this.setState({allProjects:projects});
         }
     }
     render() {  
+        var projectholder:any = [];
+
+        if(this.props.projects!==undefined){
+            for (const [key, value] of Object.entries(this.props.projects)) {
+                projectholder.push(<ProjectDetails key={key} details={value}/>);
+            }
+        }
         return (  
         <div className="row">
-            {(console.log("--111-",this.props))}
-        {this.state.allProjects.map((item:any)=>{
-            return item;
-        })}
+            {projectholder.map((item:any)=>{
+                return item;
+            })} 
         </div>
         )     
     }
 };
 
-export const Project = connect(mapStore,null)(ProjectBase);
+export const Project = connect(mapStore,{storeProjects})(ProjectBase);
