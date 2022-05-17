@@ -59,6 +59,10 @@ export const sendAjaxRequest = (url, method, putData, callback, token) => {
             ajaxobj.request.method = 'PUT';
             ajaxobj.getData(url).then(ajaxobj.processData);
         break;
+        case 'POST':
+            ajaxobj.request.method = 'POST';
+            ajaxobj.getData(url).then(ajaxobj.processData);
+        break;
         default:
             ajaxobj.getData(url).then(ajaxobj.processData);
         break;

@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import {mapStore} from "../redux/mapStore";
 import {selectProject,updateProject} from "../redux/actions";
 import CancelEdit from './CancelEdit';
+import Image from './Image';
 
 
 type Props = {
@@ -20,7 +21,7 @@ type ProjectDefinition ={
     description: string;
     role: string;
     tech: string;
-    image:string;
+    image:string[];
     projid:string;
     type: string[];
 }
@@ -57,6 +58,7 @@ class ProjectDetailsEditComponent extends React.Component<Props, State> {
         this.addURLButton = this.addURLButton.bind(this);
         this.removeURLButton = this.removeURLButton.bind(this);
         this.removeURLFormElement = this.removeURLFormElement.bind(this);
+        this.updateProjectInStore = this.updateProjectInStore.bind(this);
     }
 
     changeProperty(e:any){
@@ -64,6 +66,7 @@ class ProjectDetailsEditComponent extends React.Component<Props, State> {
         var tmp:any = {};
         tmp[e.target.name] = e.target.name === "type" ? (e.target.value.replace(" ","")).split(",") : e.target.value;
         this.setState(tmp);
+        this.updateProjectInStore();
     }
 
     changeUrlProperty(e:any){
@@ -72,6 +75,7 @@ class ProjectDetailsEditComponent extends React.Component<Props, State> {
         var index = e.target.dataset["index"];
         tmpUrl[index][e.target.name] = e.target.value;
         this.setState({url:[...tmpUrl]});
+        this.updateProjectInStore();
     }
 
     afterUpdateHandler(dataset:any,data:any){
@@ -85,7 +89,6 @@ class ProjectDetailsEditComponent extends React.Component<Props, State> {
                     }
                 break;
             }
-
         }
 
         if(this.props.selectProject){
@@ -111,12 +114,15 @@ class ProjectDetailsEditComponent extends React.Component<Props, State> {
         e.preventDefault();
         
         var tmpUrl = this.state.url.filter( (item,index) => {
-            if(index !== e.target.dataset["index"]){
+            if(index !== Number(e.target.dataset["index"])){
                 return item;
             }
             return null;
         });
         this.setState({url:[...tmpUrl]});
+        console.log(this.state);
+        this.updateProjectInStore();
+
     }
 
     addURLButton(){
@@ -136,7 +142,7 @@ class ProjectDetailsEditComponent extends React.Component<Props, State> {
         var i =0;
         for (const property in this.state) {
 
-            if(!property.match(/(^id$)|projid|url|_/)){
+            if(!property.match(/(^id$)|projid|image|url|_/)){
                 formLines.push(
                     <div key={++i} className="mb-2">
                         <label className="form-label text-capitalize">{property}</label>
@@ -148,6 +154,21 @@ class ProjectDetailsEditComponent extends React.Component<Props, State> {
                                 <input className="form-control form-control-sm" type="text" name={property} defaultValue={this.state[property as keyof ProjectDefinition]} onChange={this.changeProperty}/>
                             )
                         }
+                    </div>
+                );
+            }
+            else if(property==="image" && this.state.id===1 ){
+                let imagesObject:any =[];
+                if(this.state[property]!=null){
+                    imagesObject = this.state[property].map( (item:any, index) =>{
+                        return( 
+                            <Image sizes={item} indice={index} key={index} />
+                        )
+                    });
+                }
+                formLines.push(
+                    <div key="imagesarray" className="border p-4 my-3">
+                        {imagesObject}
                     </div>
                 );
             }
@@ -180,6 +201,12 @@ class ProjectDetailsEditComponent extends React.Component<Props, State> {
         }
 
         return formLines;
+    }
+
+    updateProjectInStore(){
+        if(this.props.updateProject!==undefined){
+            this.props.updateProject(this.state);
+        }
     }
 
     render() {

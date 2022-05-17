@@ -6,7 +6,15 @@
       "Description": "Framework Exploration with Spotify API",
       "Role": "Web Design, Development and Deployment",
       "Tech": "\u003Cul\u003E\u003Cli\u003EAmazon Web Services\u003C/li\u003E\u003Cli\u003EReact JS\u003C/li\u003E\u003Cli\u003ERedux\u003C/li\u003E\u003Cli\u003EWebpack\u003C/li\u003E\u003Cli\u003EHTML 5\u003C/li\u003E\u003Cli\u003EResponsive CSS\u003C/li\u003E\u003C/ul\u003E",
-      "Image": "reactredux_spotify.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : null
+        }
+      ],
       "Url": [
         {
           "Link": "http://reactredux.deluxeluxury.com/",
@@ -23,18 +31,25 @@
       ],
       "Projid": "reactredux",
       "Type": [
-        "design",
-        "front-end"
+        "design"
       ]
     },
     {
       "Id": 2,
-      "Name": "Sanders",
+      "Name": "Sanderson",
       "Description": "Comic Book Artwork",
       "Role": "Illustration",
       "Tech": null,
-      "Image": "mister_sanders.jpg",
-      "Url": null,
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
+      "Url": [],
       "Projid": "sanders",
       "Type": [
         "illustration"
@@ -46,7 +61,15 @@
       "Description": "Online Presence",
       "Role": "Web Design, Development and Deployment",
       "Tech": "\u003Cul\u003E\u003Cli\u003EAmazon Web Services\u003C/li\u003E\u003Cli\u003EHTML 5\u003C/li\u003E\u003Cli\u003EAngular 1.5\u003C/li\u003E\u003Cli\u003EResponsive CSS\u003C/li\u003E\u003C/ul\u003E",
-      "Image": "boutique_reunion.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
       "Url": [
         {
           "Link": "http://boutiquereunion.com/",
@@ -76,7 +99,15 @@
       "Description": "Test Project to Explore Framework",
       "Role": "Web Design, Development and Deployment",
       "Tech": "\u003Cul\u003E\u003Cli\u003EAmazon Web Services\u003C/li\u003E\u003Cli\u003EReact JS\u003C/li\u003E\u003Cli\u003EHTML 5\u003C/li\u003E\u003Cli\u003EResponsive CSS\u003C/li\u003E\u003C/ul\u003E",
-      "Image": "reactjs_test.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
       "Url": [
         {
           "Link": "http://reactjs.deluxeluxury.com/",
@@ -102,7 +133,15 @@
       "Description": "Second Samuel Performance Visuals",
       "Role": "Design and Illustration",
       "Tech": null,
-      "Image": "second_samuel_v15-01.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
       "Url": null,
       "Projid": "secondsamuel",
       "Type": [
@@ -117,7 +156,15 @@
       "Description": "Personal Project",
       "Role": "Illustration and Concept",
       "Tech": null,
-      "Image": "animal_cruelty.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
       "Url": null,
       "Projid": "cruelty",
       "Type": [
@@ -130,7 +177,15 @@
       "Description": "Personal Project",
       "Role": "Illustration and Concept",
       "Tech": null,
-      "Image": "animal_cruelty.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
       "Url": null,
       "Projid": "cruelty",
       "Type": [
@@ -143,7 +198,15 @@
       "Description": "Social Quiz Sharing Minisite",
       "Role": "Development and Deployment",
       "Tech": "\u003Cul\u003E\u003Cli\u003EAmazon Web Services\u003C/li\u003E\u003Cli\u003EJavascript\u003C/li\u003E\u003Cli\u003EJquery\u003C/li\u003E\u003Cli\u003EResponsive Web Development\u003C/li\u003E\u003Cli\u003ECSS3\u003C/li\u003E\u003C/ul\u003E\u003Cul\u003E\u003Cli\u003EJSON\u003C/li\u003E\u003Cli\u003EMySQL\u003C/li\u003E\u003Cli\u003EPHP\u003C/li\u003E\u003Cli\u003EFacebook Integration\u003C/li\u003E\u003Cli\u003ELinux Administration\u003C/li\u003E\u003C/ul\u003E",
-      "Image": "charter_fashion_police.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
       "Url": [
         {
           "Link": "http://fashionpolice.deluxeluxury.com/",
@@ -162,7 +225,15 @@
       "Description": "Multilingual B2C Sweepstakes Entry Minisite",
       "Role": "Development and Deployment",
       "Tech": "\u003Cul\u003E\u003Cli\u003EAmazon Web Services\u003C/li\u003E\u003Cli\u003ENodeJS\u003C/li\u003E\u003Cli\u003EDynamoDB\u003C/li\u003E\u003Cli\u003EJavascript\u003C/li\u003E\u003Cli\u003EJquery\u003C/li\u003E\u003C/ul\u003E\u003Cul\u003E\u003Cli\u003EResponsive Web Development\u003C/li\u003E\u003Cli\u003ECSS3\u003C/li\u003E\u003Cli\u003EJSON\u003Cli\u003E\u003C/ul\u003E",
-      "Image": "cnnevodsweeps.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
       "Url": [
         {
           "Link": "https://github.com/SuperFastCola/node-site/blob/master/app.js",
@@ -219,7 +290,15 @@
       "Description": "Logo Development",
       "Role": "Design and Illustration",
       "Tech": null,
-      "Image": "aposb_logo.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
       "Url": [
         {
           "Link": "images/iapw_logodev.pdf",
@@ -238,7 +317,15 @@
       "Description": "iOS Application - Under Development",
       "Role": "Concept, Design, Illustration and Programming",
       "Tech": "Objective C",
-      "Image": "lonely_missle.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
       "Url": [
         {
           "Link": "https://github.com/SuperFastCola/Superfastapp/tree/master/SuperFastCola",
@@ -257,7 +344,15 @@
       "Description": "Online Sweepstakes Companion Piece",
       "Role": "Game Development and Integration",
       "Tech": "\u003Cul\u003E\u003Cli\u003EHTML5 Canvas\u003C/li\u003E\u003Cli\u003ERequest Animation Frame\u003C/li\u003E\u003Cli\u003ECSS3\u003C/li\u003E\u003C/ul\u003E\u003Cul\u003E\u003Cli\u003EJSON\u003C/li\u003E\u003Cli\u003EPHP\u003C/li\u003E\u003C/ul\u003E",
-      "Image": "playtheboardwalk.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
       "Url": [
         {
           "Link": "http://boardwalk.deluxeluxury.com",
@@ -284,7 +379,15 @@
       "Description": "Promotion Site",
       "Role": "Design",
       "Tech": null,
-      "Image": "g4_e3_2010_mock1.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
       "Url": null,
       "Projid": "design3",
       "Type": [
@@ -297,7 +400,15 @@
       "Description": "ActionScript Incentive Shopping Experience",
       "Role": "Design",
       "Tech": null,
-      "Image": "25doc_shop_landing_2010_v10.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
       "Url": null,
       "Projid": "abc252010",
       "Type": [
@@ -310,7 +421,15 @@
       "Description": "Point of Purchase Sweepstakes Display",
       "Role": "Design",
       "Tech": null,
-      "Image": "living-it-up-with-martha-2011.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
       "Url": [
         {
           "Link": "https://player.vimeo.com/video/91886564",
@@ -329,7 +448,15 @@
       "Description": "Pop n\u0027 A Movie Logo Treatment",
       "Role": "Design",
       "Tech": null,
-      "Image": "hmc_sweetgift2012_bookpage_v06_mech-01.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
       "Url": null,
       "Projid": "sweetgift",
       "Type": [
@@ -342,7 +469,15 @@
       "Description": "Flash Rich Media Style Guide - unpublished",
       "Role": "Design, Animation and Programming",
       "Tech": "Actionscript 2, PHP 4, CSS 2, HTML 4, Video and XML Feed Setup/Processing",
-      "Image": "nba_digital2.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
       "Url": [
         {
           "Link": "https://player.vimeo.com/video/91886068",
@@ -361,7 +496,15 @@
       "Description": "Flash Rich Media Banner Campaign",
       "Role": "Design, Animation and Programming",
       "Tech": "Actionscript 2 and XML Feed Setup/Processing",
-      "Image": "mlb_postseason_2010.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
       "Url": [
         {
           "Link": "http://mlb2010.deluxeluxury.com/",
@@ -384,7 +527,15 @@
       "Description": "Mobile Compatible, Desktop Targeted Facebook Page Tab App",
       "Role": "Development",
       "Tech": "HTML, CSS3, JSON, PHP, Facebook API",
-      "Image": "usa_who_am_i.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
       "Url": [
         {
           "Link": "https://player.vimeo.com/video/91997024",
@@ -403,7 +554,15 @@
       "Description": "Flash Rich Media Banner Campaign.",
       "Role": "Design, Animation and Programming",
       "Tech": "Actionscript 2, Video and XML Feed Setup/Processing",
-      "Image": "youtube_960x250_pg2-01.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
       "Url": [
         {
           "Link": "http://youtubenba.deluxeluxury.com/",
@@ -426,7 +585,15 @@
       "Description": "Mobile and Desktop HTML5 Photo Manipulation Application",
       "Role": "UX Design, Development Direction, Facebook Integration and Programming",
       "Tech": "Kinetic.js, HTML 5, CSS3, Facebook API, JSON integration and PHP",
-      "Image": "cox_claim_the_throne.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
       "Url": [
         {
           "Link": "https://player.vimeo.com/video/91887069",
@@ -446,7 +613,15 @@
       "Description": "Quaterly Update Companion Web Site",
       "Role": "Design, Animation and Programming",
       "Tech": "Actionscript 2, CSS 2, HTML 4",
-      "Image": "tnt_sportsletter.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
       "Url": [
         {
           "Link": "http://sportsletter.deluxeluxury.com/",
@@ -465,7 +640,15 @@
       "Description": "Site Design",
       "Role": "Design",
       "Tech": null,
-      "Image": "spivey_hall_mock2.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
       "Url": null,
       "Projid": "design4",
       "Type": [
@@ -478,7 +661,15 @@
       "Description": "Customer Portal Design",
       "Role": "Design",
       "Tech": null,
-      "Image": "bell_canada.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
       "Url": null,
       "Projid": "design5",
       "Type": [
@@ -491,7 +682,15 @@
       "Description": "Catalog Mailer",
       "Role": "Design",
       "Tech": null,
-      "Image": "aposb_mailer_fall09_v11_pt4.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
       "Url": [
         {
           "Link": "images/aposb_mailer_fall10.pdf",
@@ -510,7 +709,15 @@
       "Description": "Digital Billboard Campaign",
       "Role": "Design",
       "Tech": null,
-      "Image": "billboardmock_detroit.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
       "Url": null,
       "Projid": "bigtenbillboard",
       "Type": [
@@ -523,7 +730,15 @@
       "Description": "Minisite Design",
       "Role": "Design",
       "Tech": null,
-      "Image": "style_ruby_landing_v3-01.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
       "Url": null,
       "Projid": "rubycity",
       "Type": [
@@ -536,7 +751,15 @@
       "Description": "Flash Facebook Application",
       "Role": "UX Design, Development Direction, Facebook Integration and Programming",
       "Tech": "Actionscript 3, Facebook API, JSON integration, Mapquest API and PHP",
-      "Image": "showtime_homeland_facebook_app.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
       "Url": [
         {
           "Link": "https://player.vimeo.com/video/90499801",
@@ -556,7 +779,15 @@
       "Description": "E-Commerce Site Design",
       "Role": "Design and Illustration",
       "Tech": null,
-      "Image": "iapw_store_home_v5.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
       "Url": null,
       "Projid": "design1",
       "Type": [
@@ -569,7 +800,15 @@
       "Description": "E-Commerce Portal Design",
       "Role": "Design and Illustration",
       "Tech": null,
-      "Image": "intermarche_final_comp2.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
       "Url": null,
       "Projid": "design2",
       "Type": [
@@ -582,7 +821,15 @@
       "Description": "Logo Development",
       "Role": "Design",
       "Tech": null,
-      "Image": "mstt_logo.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
       "Url": null,
       "Projid": "design_mstt",
       "Type": [
@@ -596,7 +843,15 @@
       "Description": "Logo Development",
       "Role": "Design",
       "Tech": null,
-      "Image": "mma_logo.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
       "Url": null,
       "Projid": "design_mma",
       "Type": [
@@ -610,7 +865,15 @@
       "Description": "Flash video site with HTML 5 video fallback.",
       "Role": "Design, Development and Integration",
       "Tech": "Javascript, JQuery, swfObject, Flowplayer, CSS2, PHP4 and HTML4 \u0026amp; 5. SmartPhone and iPad Friendly",
-      "Image": "g4e3allaccess2011.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
       "Url": [
         {
           "Link": "https://player.vimeo.com/video/91885248",
@@ -630,7 +893,15 @@
       "Description": "Mobile Compatible, Desktop Targeted Facebook Page Tab App",
       "Role": "Development",
       "Tech": "HTML, CSS3, JSON, PHP, Facebook API",
-      "Image": "rttr.jpg",
+      "Image":[
+        {
+          "Order": 1,
+          "S": "reactjs_test.jpg",
+          "M": "reactjs_test.jpg",
+          "L" : "reactjs_test.jpg",
+          "xl" : "reactjs_test.jpg"
+        }
+      ],
       "Url": [
         {
           "Link": "https://player.vimeo.com/video/91997025",
