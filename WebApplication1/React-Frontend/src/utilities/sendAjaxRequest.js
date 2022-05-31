@@ -7,8 +7,6 @@ export const sendAjaxRequest = (url, method, putData, callback, token) => {
         headers: new Headers()
     };
 
-    ajaxobj.headers.append( 'Content-Type','application/json');
-
     if(typeof token != undefined){
         ajaxobj.headers.append("Authorization", `Bearer ${token}`);
     }
@@ -33,14 +31,22 @@ export const sendAjaxRequest = (url, method, putData, callback, token) => {
  	}
     
     ajaxobj.getData = async function(url) {        
-        var response = null;
-        try{
-            response = fetch(url, this.request);
+        var response = await fetch(url, this.request).catch(error =>{
+            //set error in store to display message
+            return error;
+        })
+        
+        if(response.ok){
+            if(!this.request.headers.has("Content-Type")){
+                return await response;
+            }else{
+                return await response.json(); // parses JSON response into native JavaScript objects
+            }
         }
-        catch(e){
-            console.log(e);
+        else{
+            return await response;
         }
-        return (await response).json(); // parses JSON response into native JavaScript objects
+
     }
 
     ajaxobj.processData = function(data){
@@ -57,6 +63,7 @@ export const sendAjaxRequest = (url, method, putData, callback, token) => {
     switch(method){
         case 'PUT':
             ajaxobj.request.method = 'PUT';
+            ajaxobj.headers.append( 'Content-Type','application/json');
             ajaxobj.getData(url).then(ajaxobj.processData);
         break;
         case 'POST':
@@ -64,6 +71,7 @@ export const sendAjaxRequest = (url, method, putData, callback, token) => {
             ajaxobj.getData(url).then(ajaxobj.processData);
         break;
         default:
+            ajaxobj.headers.append( 'Content-Type','application/json');
             ajaxobj.getData(url).then(ajaxobj.processData);
         break;
             

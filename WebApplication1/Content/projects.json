@@ -13,6 +13,13 @@
           "M": "reactjs_test.jpg",
           "L" : "reactjs_test.jpg",
           "xl" : null
+        },
+        {
+          "Order": 2,
+          "S": "reactjs_test.jpg",
+          "M": null,
+          "L" : null,
+          "xl" : null
         }
       ],
       "Url": [

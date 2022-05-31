@@ -1,38 +1,55 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import {updateImage, updateProject } from '../redux/actions';
+import { mapStore } from '../redux/mapStore';
+import { ProjectDefinition } from '../types/projects';
 import { sendAjaxRequest } from '../utilities/sendAjaxRequest';
-
 
 interface Props{
     sizes:any;
     indice:number;
+    projectID:number;
+    selectedProject?: ProjectDefinition;
 }
 
-class Image extends React.Component<Props> {
+class ImageBase extends React.Component<Props> {
     fileRef: React.RefObject<HTMLInputElement>;
+    fileData:any;
 
     constructor(props:Props) {
         super(props);
-        this.fileRef = React.createRef(); 
+        this.fileRef = React.createRef();
         this.sendNewFile = this.sendNewFile.bind(this);
         this.afterUpload = this.afterUpload.bind(this);
+        this.createBlob = this.createBlob.bind(this);
     }
 
-    afterUpload(e:any){
-        console.log(e);
+    afterUpload(){
+        var project = this.props.selectedProject;
+        if(project?.image!==undefined && this.fileRef.current?.name!==undefined && this.fileRef.current?.files!==null){
+            project.image[this.props.indice] = Object.assign({...project.image[this.props.indice],[this.fileRef.current.name]:this.fileRef.current.files[0].name});
+        }
+        //need to implement image update after upload
     }
+
+    createBlob(e:any){
+        if(this.fileRef.current!==null && this.fileRef.current.files!==null){  
+            const blob = new Blob([e.target.result], {type : this.fileRef.current.files[0].type});
+            var imageData = new FormData();
+            imageData.append(this.fileRef.current.name,blob, this.fileRef.current.files[0].name);
+            sendAjaxRequest("https://localhost:44311/api/upload/","POST",imageData,this.afterUpload.bind(this));
+        }
+    }
+
 
     sendNewFile(e:any){
         e.preventDefault();
-        if(this.fileRef.current!==null){
-            if(this.fileRef.current.value.length>0){
-                console.log(this.fileRef.current.value);
-                var fileUpload = new FormData();
-                //fileUpload.append(this.fileRef.current.name, this.fileRef.current.value,"TEMP");
-
-                console.log(this.fileRef.current.files);
-                //sendAjaxRequest("https://localhost:44311/api/upload/","POST",fileUpload,this.afterUpload.bind(this,e));
-
-            }
+        if(this.fileRef.current!==null){              
+                if(this.fileRef.current.files!==null){
+                    var fileReader = new FileReader();
+                    fileReader.addEventListener("loadend",this.createBlob);
+                    fileReader.readAsArrayBuffer(this.fileRef.current.files[0]);
+                }
         }
     }
 
@@ -61,40 +78,4 @@ class Image extends React.Component<Props> {
     }
 }
 
-export default Image;
-
-// const Image = (props)=>{
-//     console.log(props);
-//     var imagesSizes = [];
-    
-//     for(var [key,value] in props.sizes){
-//         return (
-              
-            // <picture>
-            //     <source media="(min-width: 1200px)" srcset="/globalassets/digizuite/32271-350x235-crop-cdap-banner.jpg?v=4a7fb5" />
-            //     <source media="(min-width: 992px)" srcset="/globalassets/digizuite/32272-290x195-crop-cdap-banner.jpg?v=4a7fb5" />
-            //     <source srcset="/globalassets/digizuite/32273-330x220-crop-cdap-banner.jpg?v=4a7fb5" />
-            //     <img src="/media/cc0-images/painted-hand-298-332.jpg" alt="" />
-            // </picture>
-            // </div>
-        
-//             <div>Image</div>
-//             // <div key={("imageItem"+ index)} className="row mb-2 border">
-//             //     <div className="col-12 mb-2">
-//             //         <label className="form-label text-capitalize">Image</label>
-//             //         <input className="form-control form-control-sm" name="image1" data-index={index} type="file" />
-//             //     </div>
-//             // <picture>
-//             //     <source media="(min-width: 1200px)" srcset="/globalassets/digizuite/32271-350x235-crop-cdap-banner.jpg?v=4a7fb5" />
-//             //     <source media="(min-width: 992px)" srcset="/globalassets/digizuite/32272-290x195-crop-cdap-banner.jpg?v=4a7fb5" />
-//             //     <source srcset="/globalassets/digizuite/32273-330x220-crop-cdap-banner.jpg?v=4a7fb5" />
-//             //     <img src="/media/cc0-images/painted-hand-298-332.jpg" alt="" />
-//             // </picture>
-//             // </div>
-//         )
-//     };
-
-//     return imagesSizes;
-// }
-
-// export default Image;
+export const Image = connect(mapStore,{updateImage,updateProject})(ImageBase);

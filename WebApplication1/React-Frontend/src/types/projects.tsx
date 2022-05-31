@@ -4,6 +4,14 @@ export interface ProjectsInterface{
     projects:Array<any>
 }
 
+export interface Image{
+    order:number;
+    s:string;
+    m:string;
+    l:string;
+    xl:string;
+}
+
 export type ProjectDefinition ={
     url: string[]
     id?: number;
@@ -11,7 +19,7 @@ export type ProjectDefinition ={
     description: string;
     role: string;
     tech: string;
-    image:string;
+    image:Image[];
     projid:string;
     type: string[];
 }

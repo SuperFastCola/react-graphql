@@ -1,14 +1,15 @@
 import {connect} from 'react-redux';
 import React from "react";
 import { mapStore } from "../redux/mapStore";
-import {storeProjects} from "../redux/actions";
+import {setErrorMessage, storeProjects} from "../redux/actions";
 import {ProjectDefinition, ProjectsInterface} from "../types/projects";
 import { sendAjaxRequest } from '../utilities/sendAjaxRequest';
 import ProjectDetails from './ProjectDetails';
 
 type Props = {
-    projects:ProjectsInterface;
+    projects?:ProjectsInterface;
     storeProjects?(payload:any):any;
+    setErrorMessage?(payload:any):any;
 }
 
 type State =  { 
@@ -24,16 +25,27 @@ class ProjectBase extends React.Component<Props, State> {
 
     componentDidMount() {
         if(this.props.projects === undefined){
-            sendAjaxRequest("https://localhost:44311//api/values","GET",undefined,this.returnProjects);
+            try{
+                sendAjaxRequest("https://localhost:44311//api/values","GET",undefined,this.returnProjects);
+            }
+            catch(e){
+                throw new Error(`Error: ${e}`);
+            }
         }
     }
 
     returnProjects(data:ProjectsInterface){
-        if(data!=null){
+        if(data!=null && data.projects!==undefined){
             if( this.props.storeProjects!==undefined){
                 this.props.storeProjects(data.projects);
             }
         }
+        else{
+            if( this.props.setErrorMessage!==undefined){
+                this.props.setErrorMessage("Something went wrong");
+            }
+        }
+
     }
     render() {  
         var projectholder:any = [];
@@ -53,4 +65,4 @@ class ProjectBase extends React.Component<Props, State> {
     }
 };
 
-export const Project = connect(mapStore,{storeProjects})(ProjectBase);
+export const Project = connect(mapStore,{storeProjects,setErrorMessage})(ProjectBase);

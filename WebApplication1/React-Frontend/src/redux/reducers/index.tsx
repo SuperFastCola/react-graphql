@@ -1,10 +1,11 @@
 import { combineReducers } from "redux";
-import { EDIT_PROJECT, ACCESS_TOKEN, UPDATE_PROJECT, STORE_PROJECTS } from "../actionTypes";
+import { EDIT_PROJECT, ACCESS_TOKEN, UPDATE_PROJECT, STORE_PROJECTS, UPDATE_PROJECT_IMAGE, GENERATE_ERROR } from "../actionTypes";
 
 const initialState = {
       accessToken: null,
       selectedProject: undefined,
-      projects: undefined
+      projects: undefined,
+      errorMessage: null,
 };
 
 const projectsReducer = function(state = initialState, action:any) {
@@ -22,6 +23,17 @@ const projectsReducer = function(state = initialState, action:any) {
 
     case EDIT_PROJECT: {
       return {...state, selectedProject: action.project };
+    }
+
+    case UPDATE_PROJECT_IMAGE: { 
+      //needs to be implemented
+      console.log("UPDATE_PROJECT_IMAGE",state.selectedProject,action);
+
+      return state;
+    }
+
+    case GENERATE_ERROR: { 
+      return {...state, errorMessage: action.errorMessage };
     }
 
     case UPDATE_PROJECT: {

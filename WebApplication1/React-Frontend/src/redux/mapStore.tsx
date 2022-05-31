@@ -2,6 +2,6 @@
 //objects passed in is the reducer
 //have to desstructure the passed in state and return thobject
 export const mapStore = (state:any) => {
-    const {projects,selectedProject,accessToken} = state.projectsReducer;
-    return {...state,projects,selectedProject,accessToken};		
+    const {projects,selectedProject,accessToken, errorMessage} = state.projectsReducer;
+    return {...state,projects,selectedProject,accessToken,errorMessage};		
 }

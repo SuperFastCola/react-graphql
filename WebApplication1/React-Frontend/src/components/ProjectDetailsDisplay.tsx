@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import {mapStore} from "../redux/mapStore";
 import {selectProject,updateProject} from "../redux/actions";
 import CancelEdit from './CancelEdit';
-import Image from './Image';
+import {Image} from './Image';
 
 
 type Props = {
@@ -162,7 +162,7 @@ class ProjectDetailsEditComponent extends React.Component<Props, State> {
                 if(this.state[property]!=null){
                     imagesObject = this.state[property].map( (item:any, index) =>{
                         return( 
-                            <Image sizes={item} indice={index} key={index} />
+                            <Image sizes={item} indice={index} key={index} projectID={this.props.details.id} />
                         )
                     });
                 }
