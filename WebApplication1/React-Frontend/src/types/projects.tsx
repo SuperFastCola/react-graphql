@@ -4,7 +4,7 @@ export interface ProjectsInterface{
     projects:Array<any>
 }
 
-export interface Image{
+export type Image = {
     order:number;
     s:string;
     m:string;

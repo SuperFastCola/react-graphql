@@ -6,6 +6,7 @@ import {mapStore} from "../redux/mapStore";
 import {selectProject,updateProject} from "../redux/actions";
 import CancelEdit from './CancelEdit';
 import {Image} from './Image';
+import {Image as ProjectImage} from "../types/projects";
 
 
 type Props = {
@@ -26,7 +27,12 @@ type ProjectDefinition ={
     type: string[];
 }
 
-type State = ProjectDefinition;
+type DraggedItem= {
+    className: string;
+    pageY:number;
+}
+
+type State = ProjectDefinition & DraggedItem;
 
 class ProjectDetailsDisplay extends React.Component<Props, State> {
     render() {
@@ -46,10 +52,12 @@ export {ProjectDetailsDisplay};
 
 class ProjectDetailsEditComponent extends React.Component<Props, State> {
     formRef: React.RefObject<HTMLFormElement>;
+    imageList: React.RefObject<HTMLDivElement>;
     constructor(props:Props) {
         super(props);
         this.state = {...this.props.details };        
         this.formRef = React.createRef();
+        this.imageList = React.createRef();
         this.changeProperty = this.changeProperty.bind(this);
         this.createFormLines = this.createFormLines.bind(this);
         this.afterUpdateHandler = this.afterUpdateHandler.bind(this);
@@ -59,6 +67,10 @@ class ProjectDetailsEditComponent extends React.Component<Props, State> {
         this.removeURLButton = this.removeURLButton.bind(this);
         this.removeURLFormElement = this.removeURLFormElement.bind(this);
         this.updateProjectInStore = this.updateProjectInStore.bind(this);
+        this.dropOverHandler = this.dropOverHandler.bind(this);
+        this.dropStartHandler = this.dropStartHandler.bind(this);
+        this.dropEndHandler = this.dropEndHandler.bind(this);
+        this.dropHandler = this.dropHandler.bind(this);
     }
 
     changeProperty(e:any){
@@ -131,6 +143,82 @@ class ProjectDetailsEditComponent extends React.Component<Props, State> {
         )
     }
 
+    dropStartHandler(e:any){
+        const dataList = e.dataTransfer.items;
+        dataList.add(String(e.target.innerHTML),"text/html");
+        var targetClass = e.target.classList.value.match(/image-group-[0-9]{1,2}/);
+        
+        if(targetClass!==null){
+            this.setState({"className":targetClass[0]});
+        }
+    }
+
+    
+    dropEndHandler(e:any){
+        const dataList = e.dataTransfer.items;
+        // Clear any remaining drag data
+        dataList.clear();
+
+        var children = this.imageList.current?.querySelectorAll("div.image-group")!;
+        var targetedChild = this.imageList.current?.querySelector(`.${this.state.className}`);
+        var elementsOrder = [];
+
+        //strip all flex-order properties from elements
+        for (const [index, element] of children.entries()) {
+            let currentImage:HTMLDivElement = element as HTMLDivElement;
+
+            //add non target to array collection
+            if(currentImage.classList.value!==targetedChild?.classList.value){
+                elementsOrder[currentImage.offsetTop] = currentImage;
+            }
+            else{
+                elementsOrder[e.pageY] = targetedChild;
+            }         
+        }
+
+        var newProductsOrder:any = [];
+        var originalImages = this.props.details.image;
+        var orderIncrement:number = 0;
+
+        elementsOrder.forEach( (item,index)=>{
+            //cast item to HTML Div Element
+            var imageHtmlItem:HTMLDivElement = item as HTMLDivElement;
+            
+            //create clone of original image data at data-index property on imageHtmlItem
+            var originalImageData:ProjectImage = JSON.parse(JSON.stringify(originalImages[Number(imageHtmlItem.dataset.index)]));
+
+            //set new order property for image
+            var newImageData:ProjectImage = Object.assign(originalImageData,{"order":++orderIncrement});
+
+            //push into new array
+            newProductsOrder.push(newImageData);
+        });
+
+        this.setState({...Object.assign(this.props.details,{"image":newProductsOrder})});
+
+
+    }
+
+    dropOverHandler(e:any){
+        e.preventDefault();
+        // Set the dropEffect to move
+        e.dataTransfer.dropEffect = "move"
+    }
+
+    dropHandler(e:any){
+        e.preventDefault();
+
+        const data = e.dataTransfer.items;
+        for(var i in data){
+
+            if(data[i].kind === "string"){
+                data[i].getAsString(function (s: any){
+                    console.log(s);
+                  });
+            }
+        }
+    }
+
     removeURLButton(index:number){
         return(
             <div className="col-12"><button className="btn btn-danger btn-sm my-2 my-md-3" data-index={index} onClick={this.removeURLFormElement}>Remove</button></div>
@@ -161,13 +249,14 @@ class ProjectDetailsEditComponent extends React.Component<Props, State> {
                 let imagesObject:any =[];
                 if(this.state[property]!=null){
                     imagesObject = this.state[property].map( (item:any, index) =>{
+
                         return( 
-                            <Image sizes={item} indice={index} key={index} projectID={this.props.details.id} />
+                            <Image sizes={item} startDrag={this.dropStartHandler} endDrag={this.dropEndHandler} order={item.order} indice={index} key={index} projectID={this.props.details.id} />
                         )
                     });
                 }
                 formLines.push(
-                    <div key="imagesarray" className="border p-4 my-3">
+                    <div key="imagesarray" ref={this.imageList} className="d-flex flex-column border p-4 my-3" onDragOver={this.dropOverHandler} onDrop={this.dropHandler} >
                         {imagesObject}
                     </div>
                 );

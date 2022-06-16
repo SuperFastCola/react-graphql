@@ -6,20 +6,20 @@
       "Description": "Framework Exploration with Spotify API",
       "Role": "Web Design, Development and Deployment",
       "Tech": "\u003Cul\u003E\u003Cli\u003EAmazon Web Services\u003C/li\u003E\u003Cli\u003EReact JS\u003C/li\u003E\u003Cli\u003ERedux\u003C/li\u003E\u003Cli\u003EWebpack\u003C/li\u003E\u003Cli\u003EHTML 5\u003C/li\u003E\u003Cli\u003EResponsive CSS\u003C/li\u003E\u003C/ul\u003E",
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
-          "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : null
+          "M": null,
+          "L": null,
+          "Xl": null
         },
         {
           "Order": 2,
           "S": "reactjs_test.jpg",
-          "M": null,
-          "L" : null,
-          "xl" : null
+          "M": "reactjs_test.jpg",
+          "L": "reactjs_test.jpg",
+          "Xl": "IMG_0378.jpg"
         }
       ],
       "Url": [
@@ -47,13 +47,13 @@
       "Description": "Comic Book Artwork",
       "Role": "Illustration",
       "Tech": null,
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": [],
@@ -68,13 +68,13 @@
       "Description": "Online Presence",
       "Role": "Web Design, Development and Deployment",
       "Tech": "\u003Cul\u003E\u003Cli\u003EAmazon Web Services\u003C/li\u003E\u003Cli\u003EHTML 5\u003C/li\u003E\u003Cli\u003EAngular 1.5\u003C/li\u003E\u003Cli\u003EResponsive CSS\u003C/li\u003E\u003C/ul\u003E",
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": [
@@ -106,13 +106,13 @@
       "Description": "Test Project to Explore Framework",
       "Role": "Web Design, Development and Deployment",
       "Tech": "\u003Cul\u003E\u003Cli\u003EAmazon Web Services\u003C/li\u003E\u003Cli\u003EReact JS\u003C/li\u003E\u003Cli\u003EHTML 5\u003C/li\u003E\u003Cli\u003EResponsive CSS\u003C/li\u003E\u003C/ul\u003E",
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": [
@@ -140,13 +140,13 @@
       "Description": "Second Samuel Performance Visuals",
       "Role": "Design and Illustration",
       "Tech": null,
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": null,
@@ -163,13 +163,13 @@
       "Description": "Personal Project",
       "Role": "Illustration and Concept",
       "Tech": null,
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": null,
@@ -184,13 +184,13 @@
       "Description": "Personal Project",
       "Role": "Illustration and Concept",
       "Tech": null,
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": null,
@@ -205,13 +205,13 @@
       "Description": "Social Quiz Sharing Minisite",
       "Role": "Development and Deployment",
       "Tech": "\u003Cul\u003E\u003Cli\u003EAmazon Web Services\u003C/li\u003E\u003Cli\u003EJavascript\u003C/li\u003E\u003Cli\u003EJquery\u003C/li\u003E\u003Cli\u003EResponsive Web Development\u003C/li\u003E\u003Cli\u003ECSS3\u003C/li\u003E\u003C/ul\u003E\u003Cul\u003E\u003Cli\u003EJSON\u003C/li\u003E\u003Cli\u003EMySQL\u003C/li\u003E\u003Cli\u003EPHP\u003C/li\u003E\u003Cli\u003EFacebook Integration\u003C/li\u003E\u003Cli\u003ELinux Administration\u003C/li\u003E\u003C/ul\u003E",
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": [
@@ -232,13 +232,13 @@
       "Description": "Multilingual B2C Sweepstakes Entry Minisite",
       "Role": "Development and Deployment",
       "Tech": "\u003Cul\u003E\u003Cli\u003EAmazon Web Services\u003C/li\u003E\u003Cli\u003ENodeJS\u003C/li\u003E\u003Cli\u003EDynamoDB\u003C/li\u003E\u003Cli\u003EJavascript\u003C/li\u003E\u003Cli\u003EJquery\u003C/li\u003E\u003C/ul\u003E\u003Cul\u003E\u003Cli\u003EResponsive Web Development\u003C/li\u003E\u003Cli\u003ECSS3\u003C/li\u003E\u003Cli\u003EJSON\u003Cli\u003E\u003C/ul\u003E",
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": [
@@ -297,13 +297,13 @@
       "Description": "Logo Development",
       "Role": "Design and Illustration",
       "Tech": null,
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": [
@@ -324,13 +324,13 @@
       "Description": "iOS Application - Under Development",
       "Role": "Concept, Design, Illustration and Programming",
       "Tech": "Objective C",
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": [
@@ -351,13 +351,13 @@
       "Description": "Online Sweepstakes Companion Piece",
       "Role": "Game Development and Integration",
       "Tech": "\u003Cul\u003E\u003Cli\u003EHTML5 Canvas\u003C/li\u003E\u003Cli\u003ERequest Animation Frame\u003C/li\u003E\u003Cli\u003ECSS3\u003C/li\u003E\u003C/ul\u003E\u003Cul\u003E\u003Cli\u003EJSON\u003C/li\u003E\u003Cli\u003EPHP\u003C/li\u003E\u003C/ul\u003E",
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": [
@@ -386,13 +386,13 @@
       "Description": "Promotion Site",
       "Role": "Design",
       "Tech": null,
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": null,
@@ -407,13 +407,13 @@
       "Description": "ActionScript Incentive Shopping Experience",
       "Role": "Design",
       "Tech": null,
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": null,
@@ -428,13 +428,13 @@
       "Description": "Point of Purchase Sweepstakes Display",
       "Role": "Design",
       "Tech": null,
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": [
@@ -455,13 +455,13 @@
       "Description": "Pop n\u0027 A Movie Logo Treatment",
       "Role": "Design",
       "Tech": null,
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": null,
@@ -476,13 +476,13 @@
       "Description": "Flash Rich Media Style Guide - unpublished",
       "Role": "Design, Animation and Programming",
       "Tech": "Actionscript 2, PHP 4, CSS 2, HTML 4, Video and XML Feed Setup/Processing",
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": [
@@ -503,13 +503,13 @@
       "Description": "Flash Rich Media Banner Campaign",
       "Role": "Design, Animation and Programming",
       "Tech": "Actionscript 2 and XML Feed Setup/Processing",
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": [
@@ -534,13 +534,13 @@
       "Description": "Mobile Compatible, Desktop Targeted Facebook Page Tab App",
       "Role": "Development",
       "Tech": "HTML, CSS3, JSON, PHP, Facebook API",
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": [
@@ -561,13 +561,13 @@
       "Description": "Flash Rich Media Banner Campaign.",
       "Role": "Design, Animation and Programming",
       "Tech": "Actionscript 2, Video and XML Feed Setup/Processing",
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": [
@@ -592,13 +592,13 @@
       "Description": "Mobile and Desktop HTML5 Photo Manipulation Application",
       "Role": "UX Design, Development Direction, Facebook Integration and Programming",
       "Tech": "Kinetic.js, HTML 5, CSS3, Facebook API, JSON integration and PHP",
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": [
@@ -620,13 +620,13 @@
       "Description": "Quaterly Update Companion Web Site",
       "Role": "Design, Animation and Programming",
       "Tech": "Actionscript 2, CSS 2, HTML 4",
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": [
@@ -647,13 +647,13 @@
       "Description": "Site Design",
       "Role": "Design",
       "Tech": null,
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": null,
@@ -668,13 +668,13 @@
       "Description": "Customer Portal Design",
       "Role": "Design",
       "Tech": null,
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": null,
@@ -689,13 +689,13 @@
       "Description": "Catalog Mailer",
       "Role": "Design",
       "Tech": null,
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": [
@@ -716,13 +716,13 @@
       "Description": "Digital Billboard Campaign",
       "Role": "Design",
       "Tech": null,
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": null,
@@ -737,13 +737,13 @@
       "Description": "Minisite Design",
       "Role": "Design",
       "Tech": null,
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": null,
@@ -758,13 +758,13 @@
       "Description": "Flash Facebook Application",
       "Role": "UX Design, Development Direction, Facebook Integration and Programming",
       "Tech": "Actionscript 3, Facebook API, JSON integration, Mapquest API and PHP",
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": [
@@ -786,13 +786,13 @@
       "Description": "E-Commerce Site Design",
       "Role": "Design and Illustration",
       "Tech": null,
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": null,
@@ -807,13 +807,13 @@
       "Description": "E-Commerce Portal Design",
       "Role": "Design and Illustration",
       "Tech": null,
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": null,
@@ -828,13 +828,13 @@
       "Description": "Logo Development",
       "Role": "Design",
       "Tech": null,
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": null,
@@ -850,13 +850,13 @@
       "Description": "Logo Development",
       "Role": "Design",
       "Tech": null,
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": null,
@@ -872,13 +872,13 @@
       "Description": "Flash video site with HTML 5 video fallback.",
       "Role": "Design, Development and Integration",
       "Tech": "Javascript, JQuery, swfObject, Flowplayer, CSS2, PHP4 and HTML4 \u0026amp; 5. SmartPhone and iPad Friendly",
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": [
@@ -900,13 +900,13 @@
       "Description": "Mobile Compatible, Desktop Targeted Facebook Page Tab App",
       "Role": "Development",
       "Tech": "HTML, CSS3, JSON, PHP, Facebook API",
-      "Image":[
+      "Image": [
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
           "M": "reactjs_test.jpg",
-          "L" : "reactjs_test.jpg",
-          "xl" : "reactjs_test.jpg"
+          "L": "reactjs_test.jpg",
+          "Xl": "reactjs_test.jpg"
         }
       ],
       "Url": [
