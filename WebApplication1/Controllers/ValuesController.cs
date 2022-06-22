@@ -58,7 +58,7 @@ namespace WebApplication1.Controllers
 
                 var renamedFile = provider.FileData.First();
                 var cleanedFileName = renamedFile.Headers.ContentDisposition.FileName.Trim('\"');
-                string fileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"App_Data\", cleanedFileName);
+                string fileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"React-Frontend\public\images\", cleanedFileName);
                 File.Delete(fileName); // Delete the existing file if exists
                 File.Move(renamedFile.LocalFileName, fileName);
 

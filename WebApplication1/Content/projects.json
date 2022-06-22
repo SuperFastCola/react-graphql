@@ -10,16 +10,16 @@
         {
           "Order": 1,
           "S": "reactjs_test.jpg",
-          "M": null,
-          "L": null,
-          "Xl": null
+          "M": "reactjs_test.jpg",
+          "L": "reactjs_test.jpg",
+          "Xl": "IMG_0378.jpg"
         },
         {
           "Order": 2,
           "S": "reactjs_test.jpg",
-          "M": "reactjs_test.jpg",
-          "L": "reactjs_test.jpg",
-          "Xl": "IMG_0378.jpg"
+          "M": null,
+          "L": null,
+          "Xl": null
         }
       ],
       "Url": [
@@ -47,15 +47,7 @@
       "Description": "Comic Book Artwork",
       "Role": "Illustration",
       "Tech": null,
-      "Image": [
-        {
-          "Order": 1,
-          "S": "reactjs_test.jpg",
-          "M": "reactjs_test.jpg",
-          "L": "reactjs_test.jpg",
-          "Xl": "reactjs_test.jpg"
-        }
-      ],
+      "Image": null,
       "Url": [],
       "Projid": "sanders",
       "Type": [

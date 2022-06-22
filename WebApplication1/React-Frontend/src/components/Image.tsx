@@ -2,14 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {updateProject } from '../redux/actions';
 import { mapStore } from '../redux/mapStore';
-import { ProjectDefinition } from '../types/projects';
+import { ProjectDefinition} from '../types/projects';
 import { sendAjaxRequest } from '../utilities/sendAjaxRequest';
 
 interface Props{
     sizes:any;
     indice:number;
     order: number;
-    projectID:number;
     selectedProject?: ProjectDefinition;
     startDrag?(payload:any):any;
     endDrag?(payload:any):any;
@@ -18,18 +17,31 @@ interface Props{
 
 interface State{
     show:boolean;
+    sizes:any;
+    indice:number;
+    order: number;
 }
 
 class ImageBase extends React.Component<Props,State> {
     imageDivRef: React.RefObject<HTMLDivElement>;
     fileRef: React.RefObject<HTMLInputElement>;
-    fileData:any;
+    fileSizeRefs:any = {
+        "s":React.createRef(),
+        "m":React.createRef(),
+        "l":React.createRef(),
+        "xl":React.createRef(),
+    };
 
     constructor(props:Props) {
         super(props);
         this.fileRef = React.createRef();
         this.imageDivRef = React.createRef();
-        this.state = {show:false};
+        this.state = {
+            show:false, 
+            sizes: this.props.sizes,
+            indice:  this.props.indice,
+            order: this.props.order
+        };
         this.sendNewFile = this.sendNewFile.bind(this);
         this.afterUpload = this.afterUpload.bind(this);
         this.createBlob = this.createBlob.bind(this);
@@ -58,12 +70,15 @@ class ImageBase extends React.Component<Props,State> {
 
     sendNewFile(e:any){
         e.preventDefault();
-        if(this.fileRef.current!==null){              
-                if(this.fileRef.current.files!==null){
-                    var fileReader = new FileReader();
-                    fileReader.addEventListener("loadend",this.createBlob);
-                    fileReader.readAsArrayBuffer(this.fileRef.current.files[0]);
-                }
+        
+        if(this.fileSizeRefs[e.target.dataset.size].current!==null){       
+            this.fileRef = this.fileSizeRefs[e.target.dataset.size];
+            if(this.fileRef.current!==null && this.fileRef.current.files!==null){
+                console.log(this.fileRef.current.files[0]);
+                var fileReader = new FileReader();
+                fileReader.addEventListener("loadend",this.createBlob);
+                fileReader.readAsArrayBuffer(this.fileRef.current.files[0]);
+            }
         }
     }
 
@@ -76,17 +91,17 @@ class ImageBase extends React.Component<Props,State> {
         var imagesSizes:any = [];
         var collapseStyle = `collapse ${(this.state.show?"show":"")}`;
         var collapseText = (this.state.show?"hide":"show");
-        var orderClass= (this.props.order)?`flex-order-${this.props.order}`:"";
-        var holderCSS = `image-group border mb-3 px-3 ${orderClass} image-group-${this.props.order}`;
-        for(const [key, value] of Object.entries(this.props.sizes)){
+        var orderClass= (this.state.order)?`flex-order-${this.state.order}`:"";
+        var holderCSS = `image-group border mb-3 px-3 ${orderClass} image-group-${this.state.order}`;
 
+        for(const [key, value] of Object.entries(this.state.sizes)){
             if(!String(key).match(/order|id/)){
                 imagesSizes.push(
                         <div key={("imageItem_"+key)} className="row mx-0 mb-2 border">
                             <div className="col-12 mb-2">
                                 <label className="form-label text-capitalize">{key}: {value}</label>
-                                <input className="form-control form-control-sm mb-1" name={key} data-name={String(key+this.props.indice)} data-index={this.props.indice}  ref={this.fileRef} type="file" />
-                                <button className="btn btn-primary" data-name={String(key+this.props.indice)} onClick={this.sendNewFile}>Upload</button>
+                                <input className="form-control form-control-sm mb-1" name={key} data-name={String(key+this.state.indice)} data-index={this.state.indice}  ref={this.fileSizeRefs[key]} type="file" />
+                                <button className="btn btn-primary" data-size={key} data-name={String(key+this.state.indice)} onClick={this.sendNewFile}>Upload</button>
                             </div>
                         </div>
                         );
@@ -95,8 +110,8 @@ class ImageBase extends React.Component<Props,State> {
         
         return (
 
-            <div className={holderCSS} ref={this.imageDivRef} draggable="true" data-index={this.props.indice} onDragStart={this.props.startDrag} onDragEnd={this.props.endDrag}>
-                <div className="d-flex my-3"><h6 className="flex-fill">Image {this.props.indice}</h6>
+            <div className={holderCSS} ref={this.imageDivRef} draggable="true" data-index={this.state.indice} onDragStart={this.props.startDrag} onDragEnd={this.props.endDrag}>
+                <div className="d-flex my-3"><h6 className="flex-fill">Image {this.state.indice}</h6>
                 <button className="btn btn-primary" onClick={this.showHide}>{collapseText}</button></div>
                 <div className={collapseStyle}>{imagesSizes}</div>  
             </div>

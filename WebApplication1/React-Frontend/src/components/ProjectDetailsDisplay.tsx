@@ -245,15 +245,23 @@ class ProjectDetailsEditComponent extends React.Component<Props, State> {
                     </div>
                 );
             }
-            else if(property==="image" && this.state.id===1 ){
+            else if(property==="image" ){
                 let imagesObject:any =[];
-                if(this.state[property]!=null){
+                if(this.state[property]!=null && this.state[property].length > 0){
                     imagesObject = this.state[property].map( (item:any, index) =>{
-
                         return( 
-                            <Image sizes={item} startDrag={this.dropStartHandler} endDrag={this.dropEndHandler} order={item.order} indice={index} key={index} projectID={this.props.details.id} />
+                            <Image sizes={item} startDrag={this.dropStartHandler} endDrag={this.dropEndHandler} order={item.order} indice={index} key={index} />
                         )
                     });
+                }
+                else{
+                    var inputProps ={
+                        "S": null,
+                        "M": null,
+                        "L": null,
+                        "Xl": null
+                    };
+                    imagesObject.push(<Image sizes={inputProps} startDrag={this.dropStartHandler} endDrag={this.dropEndHandler} order={1} indice={0} key={0} />);
                 }
                 formLines.push(
                     <div key="imagesarray" ref={this.imageList} className="d-flex flex-column border p-4 my-3" onDragOver={this.dropOverHandler} onDrop={this.dropHandler} >
@@ -261,6 +269,7 @@ class ProjectDetailsEditComponent extends React.Component<Props, State> {
                     </div>
                 );
             }
+
             else if(property==="url"){
                     let urlsObject:any =[]; 
                     if(this.state[property]!=null){
